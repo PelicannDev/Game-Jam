@@ -29,9 +29,12 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("down"):
 			direction.x = 0
 			get_node("AnimatedSprite2D").play("Down")
-
+	
 		else:
 			direction = Vector2.ZERO
+
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 
 #normalize the directional movement
 	direction = direction.normalized()
@@ -40,7 +43,3 @@ func _physics_process(delta):
 	if can_move:
 		velocity = (direction * speed)
 		move_and_slide()
-	
-	#clamp position
-	position.x = clamp(position.x, 16, 304)
-	position.y = clamp(position.y, 16, 224)
