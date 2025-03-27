@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://dg7cshvbsa2ds"]
+
+[ext_resource type="Script" uid="uid://dxxew0qlpwtnh" path="res://Scripts/player.gd" id="1_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://bh0d57nxtsfho" path="res://Sprites/player_d_1.png" id="2_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cix0ouj8vdkjn" path="res://Sprites/player_d_2.png" id="3_gymyn"]
+[ext_resource type="Texture2D" uid="uid://dc3o0friip7r8" path="res://Sprites/player_l_1.png" id="4_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://cuo1et8tshvjx" path="res://Sprites/player_l_2.png" id="5_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://f5bma5tlqxoa" path="res://Sprites/player_r_1.png" id="6_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://dnhvmd66caiu2" path="res://Sprites/player_r_2.png" id="7_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://dhwucevbgqlpx" path="res://Sprites/player_u_1.png" id="8_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://bdwiywpjw2v6l" path="res://Sprites/player_u_2.png" id="9_qqcod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y32iv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gymyn")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pu2lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ukyrk")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7dp3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h4iuc")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fd4e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qqcod")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_f1ek2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8ryqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y32iv")
+animation = &"Down"
