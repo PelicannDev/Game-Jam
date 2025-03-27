@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://ovil38ch4qq7"]
+
+[ext_resource type="Script" uid="uid://d0njo6x6qr1vp" path="res://Scripts/battery.gd" id="1_23u8t"]
+[ext_resource type="Texture2D" uid="uid://e7lqx45cmrs" path="res://Sprites/battery.png" id="1_mjabg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjabg"]
+size = Vector2(13.5, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23u8t"]
+size = Vector2(13, 13)
+
+[node name="Battery" type="RigidBody2D"]
+freeze_mode = 1
+script = ExtResource("1_23u8t")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_mjabg")
+
+[node name="DownArea2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/DownArea2D"]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_mjabg")
+
+[node name="UpArea2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/UpArea2D"]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_mjabg")
+
+[node name="LeftArea2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/LeftArea2D"]
+position = Vector2(-21, 2.84217e-14)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mjabg")
+
+[node name="RightArea2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/RightArea2D"]
+position = Vector2(21, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mjabg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_23u8t")

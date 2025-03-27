@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cguqshvruwubx"]
+[gd_scene load_steps=3 format=3 uid="uid://cguqshvruwubx"]
 
-[ext_resource type="Script" uid="uid://dxxew0qlpwtnh" path="res://Scripts/player.gd" id="1_8ryqv"]
-[ext_resource type="Texture2D" uid="uid://huktxgincmt3" path="res://Sprites/player.png" id="1_m0b12"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
-size = Vector2(16, 32)
+[ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="1_m0b12"]
+[ext_resource type="PackedScene" uid="uid://ovil38ch4qq7" path="res://Scenes/battery.tscn" id="2_8ryqv"]
 
 [node name="Level0" type="Node2D"]
-position = Vector2(69, 54)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_8ryqv")
+[node name="Player" parent="." instance=ExtResource("1_m0b12")]
+scale = Vector2(0.853989, 0.897209)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_m0b12")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_8ryqv")
+[node name="Battery" parent="." instance=ExtResource("2_8ryqv")]
+position = Vector2(112, 64)
+mass = 0.452
+gravity_scale = 0.96
+freeze = true
