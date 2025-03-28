@@ -1,0 +1,144 @@
+[gd_scene load_steps=17 format=3 uid="uid://fjns2cru7trj"]
+
+[ext_resource type="Script" uid="uid://c43x57rxaf1a1" path="res://Scripts/limit_block.gd" id="1_k2kqo"]
+[ext_resource type="Texture2D" uid="uid://c811lau0l7ytx" path="res://Sprites/limit_9.png" id="1_q638v"]
+[ext_resource type="Texture2D" uid="uid://doyqfwf16ew07" path="res://Sprites/limit_0.png" id="2_6aglk"]
+[ext_resource type="Texture2D" uid="uid://cvn8ti3c4ukp1" path="res://Sprites/limit_8.png" id="2_d2oop"]
+[ext_resource type="Texture2D" uid="uid://dabxi77gpgm76" path="res://Sprites/limit_7.png" id="3_k2kqo"]
+[ext_resource type="Texture2D" uid="uid://kjjh8ennei52" path="res://Sprites/limit_6.png" id="4_6aglk"]
+[ext_resource type="Texture2D" uid="uid://bpqehmah2a2wm" path="res://Sprites/limit_5.png" id="5_ifvyi"]
+[ext_resource type="Texture2D" uid="uid://tpnpneck88g1" path="res://Sprites/limit_4.png" id="6_xthvb"]
+[ext_resource type="Texture2D" uid="uid://dofk6rshhbox2" path="res://Sprites/limit_3.png" id="7_qeaiq"]
+[ext_resource type="Texture2D" uid="uid://ben3y8ow24jhc" path="res://Sprites/limit_2.png" id="8_5sjaw"]
+[ext_resource type="Texture2D" uid="uid://c1rufo21n1xy4" path="res://Sprites/limit_1.png" id="9_pt6mx"]
+[ext_resource type="Texture2D" uid="uid://bfyu5vtgx00hc" path="res://Sprites/e_key.png" id="10_d2oop"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_murrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6aglk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pt6mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5sjaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qeaiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xthvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ifvyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6aglk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k2kqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d2oop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_q638v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2kqo"]
+size = Vector2(5.75, 6.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6aglk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx4xl"]
+size = Vector2(16, 16)
+
+[node name="LimitBlock" type="RigidBody2D"]
+script = ExtResource("1_k2kqo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_murrn")
+
+[node name="DownArea2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DownArea2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_k2kqo")
+
+[node name="UpArea2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/UpArea2D"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_k2kqo")
+
+[node name="LeftArea2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/LeftArea2D"]
+position = Vector2(-11, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_k2kqo")
+
+[node name="RightArea2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/RightArea2D"]
+position = Vector2(11, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_k2kqo")
+
+[node name="WallDown2D" type="Area2D" parent="AnimatedSprite2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/WallDown2D"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_6aglk")
+
+[node name="WallUp2D" type="Area2D" parent="AnimatedSprite2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/WallUp2D"]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_6aglk")
+
+[node name="WallLeft2D" type="Area2D" parent="AnimatedSprite2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/WallLeft2D"]
+position = Vector2(-24, 0)
+shape = SubResource("RectangleShape2D_6aglk")
+
+[node name="WallRight2D" type="Area2D" parent="AnimatedSprite2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/WallRight2D"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_6aglk")
+
+[node name="eKey" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -15)
+texture = ExtResource("10_d2oop")
+
+[node name="eKey2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 15)
+texture = ExtResource("10_d2oop")
+
+[node name="eKey3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15, 0)
+texture = ExtResource("10_d2oop")
+
+[node name="eKey4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-15, 0)
+texture = ExtResource("10_d2oop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yx4xl")

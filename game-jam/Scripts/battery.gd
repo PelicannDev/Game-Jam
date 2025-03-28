@@ -64,7 +64,6 @@ func _input(event):
 		if player_touching and determine_direction() and is_path_clear():
 			is_moving = true
 			can_move = false
-			$AudioStreamPlayer.play()
 			if player:
 				player.can_move = false
 
@@ -114,24 +113,24 @@ func determine_direction() -> bool:
 	if locked or !player:
 		return false
 		
-	var can_move_battery = false
+	var can_move = false
 	
 	if up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(0, grid_size)
-		can_move_battery = true
+		can_move = true
 	elif down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(0, -grid_size)
-		can_move_battery = true
+		can_move = true
 	elif left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(grid_size, 0)
-		can_move_battery = true
+		can_move = true
 	elif right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(-grid_size, 0)
-		can_move_battery = true
+		can_move = true
 
-	if can_move_battery:
+	if can_move:
 		target_position = target_position.snapped(Vector2(grid_size, grid_size))
-	return can_move_battery
+	return can_move
 
 func _process(delta):
 	update_prompts()
@@ -155,12 +154,6 @@ func update_prompts():
 	e_key2.visible = show_prompts and up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player) and is_path_clear()
 	e_key3.visible = show_prompts and left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player) and is_path_clear()
 	e_key4.visible = show_prompts and right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player) and is_path_clear()
-
-func reset_battery():
-	locked = false
-	can_move = true
-	is_moving = false
-	target_position = position.snapped(Vector2(grid_size, grid_size))
 
 func finish_movement():
 	position = target_position
