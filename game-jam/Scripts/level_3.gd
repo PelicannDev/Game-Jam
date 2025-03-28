@@ -9,4 +9,7 @@ func _on_battery_area_body_entered(body):
 
 func _process(delta):
 	if unlock == 1:
+		$Wall/CollisionShape2D.disabled = false
 		$Wall.visible = true
+	else:
+		$Wall/CollisionShape2D.disabled = true

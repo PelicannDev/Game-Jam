@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-# Movement Settings
+#movement settings
 @export var grid_size: int = 16
 @export var move_speed: float = 5.0
 var target_position: Vector2 = position
@@ -8,7 +8,7 @@ var is_moving: bool = false
 var can_move: bool = true
 var locked: bool = false
 
-# Node References
+#node references
 @onready var up_area: Area2D = $Sprite/UpArea2D
 @onready var down_area: Area2D = $Sprite/DownArea2D
 @onready var left_area: Area2D = $Sprite/LeftArea2D
@@ -19,11 +19,11 @@ var locked: bool = false
 @onready var e_key4: Sprite2D = $eKey4
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
-# Cached references
+#idk just reference these for now
 var player: CharacterBody2D = null
 var tilemap: TileMap = null
 
-# Offsets for precise collision
+#offsets
 const UP_OFFSET = Vector2(0, 8)
 const DOWN_OFFSET = Vector2(0, -8)
 const LEFT_OFFSET = Vector2(8, 0)
@@ -34,28 +34,20 @@ func _ready():
 	target_position = position
 	gravity_scale = 0
 	find_references()
-	
+
 func find_references():
-	# Find player
-	player = get_tree().get_first_node_in_group("player")
-	if !player:
-		player = get_node_or_null("../Player")  # Fallback: Check parent directory
-		if !player:
-			push_warning("Player not found for battery ", name)
-	
-	# Find tilemap
-	tilemap = get_tree().get_first_node_in_group("tilemap")
-	if !tilemap:
-		tilemap = get_node_or_null("../TileMap")  # Fallback: Check parent directory
-		if !tilemap:
-			push_warning("TileMap not found for battery ", name)
+	#find player
+	player = get_node_or_null("../Player")
+
+	#find tilemap
+	tilemap = get_node_or_null("../TileMap")
 
 func _input(event):
 	if locked or is_moving or !can_move:
 		return
 		
 	if event.is_action_pressed("battery"):
-		# Check if player is touching this specific battery
+		#check if player is touching this specific battery
 		var player_touching = (up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player)) or \
 							(down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player)) or \
 							(left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player)) or \
@@ -73,19 +65,23 @@ func is_path_clear() -> bool:
 		
 	var check_pos: Vector2
 	
-	# Determine check position based on player interaction
+	#determine check position based on player interaction
 	if up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player):
 		check_pos = position + UP_OFFSET + Vector2(0, grid_size)
+		
 	elif down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player):
 		check_pos = position + DOWN_OFFSET + Vector2(0, -grid_size)
+		
 	elif left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player):
 		check_pos = position + LEFT_OFFSET + Vector2(grid_size, 0)
+		
 	elif right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player):
 		check_pos = position + RIGHT_OFFSET + Vector2(-grid_size, 0)
+		
 	else:
 		return false
 	
-	# Check for tilemap obstacles
+	#check for tilemap obstacles
 	var tile_pos = tilemap.local_to_map(check_pos)
 	if tilemap.get_cell_source_id(0, tile_pos) == -1:
 		return false
@@ -94,7 +90,7 @@ func is_path_clear() -> bool:
 	if tile_data and tile_data.get_collision_polygons_count(0) > 0:
 		return false
 	
-	# Check for other batteries in the target position
+	#check for other batteries in the target position
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsShapeQueryParameters2D.new()
 	query.collision_mask = collision_mask
@@ -118,12 +114,15 @@ func determine_direction() -> bool:
 	if up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(0, grid_size)
 		can_move = true
+		
 	elif down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(0, -grid_size)
 		can_move = true
+		
 	elif left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(grid_size, 0)
 		can_move = true
+		
 	elif right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player):
 		target_position = position + Vector2(-grid_size, 0)
 		can_move = true
@@ -137,7 +136,7 @@ func _process(delta):
 	
 	if is_moving:
 		position = position.lerp(target_position, move_speed * delta)
-		if position.distance_to(target_position) < 1.0:  # Slightly larger threshold
+		if position.distance_to(target_position) < 1.0:  #slightly larger threshold
 			finish_movement()
 
 func update_prompts():

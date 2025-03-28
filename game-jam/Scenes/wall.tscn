@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c58a3lrgfoslw"]
+[gd_scene load_steps=4 format=3 uid="uid://kl2uth1jxrj1"]
 
 [ext_resource type="Texture2D" uid="uid://bbhlkiu7n8ki0" path="res://Sprites/gate_nolock_v.png" id="1_d155t"]
-[ext_resource type="Script" uid="uid://cgcpuj5fwmnk7" path="res://Scripts/wall.gd" id="1_yjehn"]
+[ext_resource type="Script" path="res://Scripts/wall.gd" id="1_yjehn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjehn"]
 size = Vector2(7, 48)

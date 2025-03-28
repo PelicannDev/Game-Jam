@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var next_wire: NodePath  # Fixed typo from next_wire to next_wire
+@export var next_wire: NodePath
 @export var is_start: bool = false
 @export var teleport_offset: Vector2 = Vector2(0, -20)
-@export var end_animation: String = "enterRight"  # This should match your actual animation name
+@export var end_animation: String = "enterRight"  #this is you last animations name
 
 var player_ref: CharacterBody2D = null
 var is_animating: bool = false
@@ -39,7 +39,7 @@ func start_teleport():
 	player_ref.visible = false
 	player_ref.set_process(false)
 	
-	# First wire plays enterLeft
+	#first wire uses enterLeft
 	$Wire.play("enterLeft")
 	await $Wire.animation_finished
 	
@@ -55,10 +55,10 @@ func continue_teleport(player):
 	player_ref = player
 	is_animating = true
 	
-	# Determine which animation to play
-	if not has_next_wire():  # This is the last wire
+	#determine anim to play
+	if not has_next_wire():  #last wire
 		print("Playing end animation (", end_animation, ") on: ", name)
-		$Wire.play(end_animation)  # Use the exported end_animation name
+		$Wire.play(end_animation)  #use the exported end_animation name
 	else:
 		print("Playing activate animation on: ", name)
 		$Wire.play("activate")
@@ -83,6 +83,6 @@ func finish_teleport():
 	player_ref = null
 	is_animating = false
 
-# Helper function to check for next wire
+#check for next wire
 func has_next_wire() -> bool:
 	return next_wire != NodePath("") and get_node_or_null(next_wire) != null

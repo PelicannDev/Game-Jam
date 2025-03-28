@@ -1,19 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://4wybxhuajckc"]
+[gd_scene load_steps=13 format=3 uid="uid://bxm24fkqv3xrj"]
 
 [ext_resource type="Script" uid="uid://c6t0tyn6idykg" path="res://Scripts/level_3.gd" id="1_53xsp"]
 [ext_resource type="PackedScene" uid="uid://bdl0qba1sjqqp" path="res://Scenes/tilemap.tscn" id="1_g5cw1"]
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="2_76ybr"]
 [ext_resource type="Texture2D" uid="uid://c1t1adplqgkgq" path="res://Sprites/battery_spot.png" id="3_5e78q"]
-[ext_resource type="PackedScene" uid="uid://fjns2cru7trj" path="res://Scenes/limit_block.tscn" id="3_76ybr"]
-[ext_resource type="Script" uid="uid://bmf6scydsrxs6" path="res://Scripts/lock.gd" id="6_l4wr6"]
+[ext_resource type="PackedScene" path="res://Scenes/limit_block.tscn" id="3_76ybr"]
+[ext_resource type="Script" path="res://Scripts/lock.gd" id="6_l4wr6"]
 [ext_resource type="Texture2D" uid="uid://bbws30igubkhy" path="res://Sprites/lock_h.png" id="7_5rvg2"]
-[ext_resource type="PackedScene" uid="uid://c58a3lrgfoslw" path="res://Scenes/wall.tscn" id="8_5e78q"]
+[ext_resource type="Script" path="res://Scripts/wall.gd" id="8_l4wr6"]
+[ext_resource type="Texture2D" uid="uid://bbhlkiu7n8ki0" path="res://Sprites/gate_nolock_v.png" id="9_5rvg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ughle"]
 size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtv8s"]
 size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjehn"]
+size = Vector2(7, 48)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_53xsp")
@@ -57,8 +61,24 @@ texture = ExtResource("7_5rvg2")
 position = Vector2(336, 168)
 texture = ExtResource("7_5rvg2")
 
-[node name="Wall" parent="." instance=ExtResource("8_5e78q")]
+[node name="Wall" type="RigidBody2D" parent="."]
 visible = false
 position = Vector2(144, 112)
+script = ExtResource("8_l4wr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-0.5, -16)
+shape = SubResource("RectangleShape2D_yjehn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+texture = ExtResource("9_5rvg2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Wall"]
+position = Vector2(0, -32)
+texture = ExtResource("9_5rvg2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Wall"]
+position = Vector2(0, -16)
+texture = ExtResource("9_5rvg2")
 
 [connection signal="body_entered" from="BatterySpot/BatteryArea" to="." method="_on_battery_area_body_entered"]

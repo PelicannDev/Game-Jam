@@ -2,27 +2,27 @@ extends CanvasLayer
 
 signal transition_complete
 
-# Reference to nodes - adjust these paths if your structure is different
+#reference to nodes
 @onready var animation_player: AnimationPlayer = $TransitionPanel/Animator
 
 func _ready():
-	# Start hidden
+	#start hidden
 	visible = false
 	$TransitionPanel.modulate.a = 0.0
 
 func transition_to(scene_path: String):
-	# Make visible and fade in
+	#visible then fade in
 	visible = true
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	
-	# Scene change
+	#scene change
 	get_tree().change_scene_to_file(scene_path)
 	
-	# Brief delay to allow new scene to load
+	#brief delay to allow scene to load
 	await get_tree().process_frame
 	
-	# Fade out
+	#fade out
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
 	
