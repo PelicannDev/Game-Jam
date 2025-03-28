@@ -21,7 +21,8 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		print("Player exited wire: ", name)
+		if $QKey:
+			$QKey.visible = false
 		player_ref = null
 
 func _input(event):
