@@ -27,8 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="25_mg2ew"]
 [ext_resource type="PackedScene" uid="uid://bdl0qba1sjqqp" path="res://Scenes/tilemap.tscn" id="26_d16x5"]
 [ext_resource type="Texture2D" uid="uid://d18of34ggky6b" path="res://Sprites/wasd.png" id="27_x4jox"]
-[ext_resource type="AudioStream" uid="uid://dl6as207xfmq3" path="res://Audio/Game Jam Side Effects/Intro/Intro Wire.mp3" id="28_snpp8"]
-[ext_resource type="AudioStream" uid="uid://cv772ky6fvjdp" path="res://Audio/title screen.mp3" id="29_y2o84"]
+[ext_resource type="Texture2D" uid="uid://gp42vghbnakt" path="res://Sprites/title_arrow.png" id="28_snpp8"]
+[ext_resource type="Script" uid="uid://dfsl0q832kt4v" path="res://Scripts/title_arrow.gd" id="29_y2o84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yglx8"]
 animations = [{
@@ -134,15 +134,14 @@ shape = SubResource("RectangleShape2D_d16x5")
 position = Vector2(28, 182)
 texture = ExtResource("27_x4jox")
 
+[node name="TitleArrow" type="Sprite2D" parent="."]
+position = Vector2(55, 142)
+texture = ExtResource("28_snpp8")
+script = ExtResource("29_y2o84")
+bounce_height = 0.0
+
 [node name="Player" parent="." instance=ExtResource("25_mg2ew")]
 position = Vector2(28, 213)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("28_snpp8")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_y2o84")
-volume_db = -14.991
 
 [connection signal="animation_finished" from="Plug" to="." method="_on_plug_animation_finished"]
 [connection signal="body_entered" from="Plug/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -142,6 +142,17 @@ animations = [{
 "loop": true,
 "name": &"Up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gymyn")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -152,5 +163,4 @@ shape = SubResource("RectangleShape2D_8ryqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y32iv")
-animation = &"IdleUp"
-frame_progress = 0.245854
+animation = &"IdleLeft"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58a3lrgfoslw"]
+
+[ext_resource type="Texture2D" uid="uid://bbhlkiu7n8ki0" path="res://Sprites/gate_nolock_v.png" id="1_d155t"]
+[ext_resource type="Script" uid="uid://cgcpuj5fwmnk7" path="res://Scripts/wall.gd" id="1_yjehn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjehn"]
+size = Vector2(7, 48)
+
+[node name="Wall" type="RigidBody2D"]
+script = ExtResource("1_yjehn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -16)
+shape = SubResource("RectangleShape2D_yjehn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d155t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_d155t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_d155t")

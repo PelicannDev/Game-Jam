@@ -3,16 +3,17 @@ extends RigidBody2D
 # Movement Settings
 @export var grid_size: int = 16
 @export var move_speed: float = 5.0
+@export var turn_amount: int = 9
 var target_position: Vector2 = position
 var is_moving: bool = false
 var can_move: bool = true
 var locked: bool = false
 
 # Node References
-@onready var up_area: Area2D = $Sprite/UpArea2D
-@onready var down_area: Area2D = $Sprite/DownArea2D
-@onready var left_area: Area2D = $Sprite/LeftArea2D
-@onready var right_area: Area2D = $Sprite/RightArea2D
+@onready var up_area: Area2D = $AnimatedSprite2D/UpArea2D
+@onready var down_area: Area2D = $AnimatedSprite2D/DownArea2D
+@onready var left_area: Area2D = $AnimatedSprite2D/LeftArea2D
+@onready var right_area: Area2D = $AnimatedSprite2D/RightArea2D
 @onready var e_key: Sprite2D = $eKey
 @onready var e_key2: Sprite2D = $eKey2
 @onready var e_key3: Sprite2D = $eKey3
@@ -30,6 +31,7 @@ const LEFT_OFFSET = Vector2(8, 0)
 const RIGHT_OFFSET = Vector2(-8, 0)
 
 func _ready():
+	$AnimatedSprite2D.frame = turn_amount
 	add_to_group("batteries")
 	target_position = position
 	gravity_scale = 0
@@ -54,7 +56,7 @@ func _input(event):
 	if locked or is_moving or !can_move:
 		return
 		
-	if event.is_action_pressed("battery"):
+	if event.is_action_pressed("battery") && turn_amount > 0:
 		# Check if player is touching this specific battery
 		var player_touching = (up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player)) or \
 							(down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player)) or \
@@ -134,6 +136,7 @@ func determine_direction() -> bool:
 
 func _process(delta):
 	update_prompts()
+	print(turn_amount)
 	
 	if is_moving:
 		position = position.lerp(target_position, move_speed * delta)
@@ -150,14 +153,16 @@ func update_prompts():
 	
 	var show_prompts = not locked and not is_moving and can_move
 	
-	e_key.visible = show_prompts and down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player) and is_path_clear()
-	e_key2.visible = show_prompts and up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player) and is_path_clear()
-	e_key3.visible = show_prompts and left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player) and is_path_clear()
-	e_key4.visible = show_prompts and right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player) and is_path_clear()
+	e_key.visible = show_prompts and down_area.has_overlapping_bodies() and down_area.get_overlapping_bodies().has(player) and is_path_clear() and turn_amount > 0
+	e_key2.visible = show_prompts and up_area.has_overlapping_bodies() and up_area.get_overlapping_bodies().has(player) and is_path_clear() and turn_amount > 0
+	e_key3.visible = show_prompts and left_area.has_overlapping_bodies() and left_area.get_overlapping_bodies().has(player) and is_path_clear() and turn_amount > 0
+	e_key4.visible = show_prompts and right_area.has_overlapping_bodies() and right_area.get_overlapping_bodies().has(player) and is_path_clear() and turn_amount > 0
 
 func finish_movement():
 	position = target_position
 	is_moving = false
 	can_move = true
+	turn_amount -= 1
+	$AnimatedSprite2D.frame = turn_amount
 	if player:
 		player.can_move = true
