@@ -25,6 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://gjdvjqwbyq1o" path="res://Sprites/player_idle_u2.png" id="17_qpa8y"]
 [ext_resource type="Texture2D" uid="uid://be8cxjauf1dmk" path="res://Sprites/player_idle_u3.png" id="18_sbwqj"]
 [ext_resource type="Texture2D" uid="uid://bmhfe0xd8qv0n" path="res://Sprites/player_idle_u4.png" id="19_xwi16"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://d1b58crsgebbc" path="res://Sprites/player_enter_1.png" id="26_83xs0"]
+[ext_resource type="Texture2D" uid="uid://g5feymxq8khv" path="res://Sprites/player_enter_2.png" id="27_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://carot1uw7kr67" path="res://Sprites/player_enter_3.png" id="28_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://bqb18arcxt02j" path="res://Sprites/player_enter_4.png" id="29_wohnl"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(16, 16)
