@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="2_76ybr"]
 [ext_resource type="Texture2D" uid="uid://c1t1adplqgkgq" path="res://Sprites/battery_spot.png" id="3_5e78q"]
 [ext_resource type="Texture2D" uid="uid://cg8ibul5lfrpy" path="res://Sprites/lock_v.png" id="7_g6bfm"]
-[ext_resource type="Script" path="res://Scripts/wall.gd" id="8_l4wr6"]
+[ext_resource type="Script" uid="uid://cgcpuj5fwmnk7" path="res://Scripts/wall.gd" id="8_l4wr6"]
 [ext_resource type="Texture2D" uid="uid://bbhlkiu7n8ki0" path="res://Sprites/gate_nolock_v.png" id="9_5rvg2"]
 [ext_resource type="Script" uid="uid://riwtuonkd2fg" path="res://Scripts/wire_segment.gd" id="10_ds67j"]
 [ext_resource type="Texture2D" uid="uid://11kl3042rqay" path="res://Sprites/wire_travel_h0.png" id="11_tt48c"]
