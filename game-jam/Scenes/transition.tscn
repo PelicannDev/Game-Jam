@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhw0iv4a6qid4"]
+[gd_scene load_steps=7 format=3 uid="uid://bhw0iv4a6qid4"]
 
 [ext_resource type="Script" uid="uid://ctnlhsdf58uv2" path="res://Scripts/transition.gd" id="1_ah04o"]
+[ext_resource type="AudioStream" uid="uid://h1p7h5lt41if" path="res://Audio/Game Jam Side Effects/transistion/Transistion sound.mp3" id="2_ah04o"]
 
 [sub_resource type="Animation" id="Animation_ah04o"]
 length = 0.001
@@ -110,3 +111,6 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_vlteq")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ah04o")

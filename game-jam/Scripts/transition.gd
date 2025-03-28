@@ -13,6 +13,7 @@ func _ready():
 func transition_to(scene_path: String):
 	# Make visible and fade in
 	visible = true
+	$AudioStreamPlayer.play()
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	

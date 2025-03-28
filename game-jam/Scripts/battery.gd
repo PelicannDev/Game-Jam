@@ -64,6 +64,7 @@ func _input(event):
 		if player_touching and determine_direction() and is_path_clear():
 			is_moving = true
 			can_move = false
+			$AudioStreamPlayer.play()
 			if player:
 				player.can_move = false
 
