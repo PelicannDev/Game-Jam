@@ -1,11 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://bjuohqyecvqxs"]
+[gd_scene load_steps=41 format=3 uid="uid://bjuohqyecvqxs"]
 
 [ext_resource type="Script" uid="uid://bnyf8yys0yk73" path="res://Scripts/level_2.gd" id="1_v36qu"]
 [ext_resource type="PackedScene" uid="uid://bdl0qba1sjqqp" path="res://Scenes/tilemap.tscn" id="2_cggpd"]
 [ext_resource type="Texture2D" uid="uid://c1t1adplqgkgq" path="res://Sprites/battery_spot.png" id="3_055b2"]
 [ext_resource type="PackedScene" uid="uid://ovil38ch4qq7" path="res://Scenes/battery.tscn" id="4_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="5_uhnj4"]
-[ext_resource type="Script" uid="uid://bmf6scydsrxs6" path="res://Scripts/lock.gd" id="6_055b2"]
+[ext_resource type="Script" path="res://Scripts/lock.gd" id="6_055b2"]
 [ext_resource type="Texture2D" uid="uid://bbws30igubkhy" path="res://Sprites/lock_h.png" id="6_cggpd"]
 [ext_resource type="Script" uid="uid://riwtuonkd2fg" path="res://Scripts/wire_segment.gd" id="7_4k5rq"]
 [ext_resource type="Texture2D" uid="uid://11kl3042rqay" path="res://Sprites/wire_travel_h0.png" id="8_nx14l"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://c4s45bgv825y2" path="res://Sprites/fan_2.png" id="29_kwf64"]
 [ext_resource type="Texture2D" uid="uid://cyxf2c4aovp52" path="res://Sprites/blue_light_1.png" id="30_5s1wx"]
 [ext_resource type="Texture2D" uid="uid://3rn1t64nmh1u" path="res://Sprites/blue_light_2.png" id="31_27s1b"]
+[ext_resource type="PackedScene" uid="uid://kl2uth1jxrj1" path="res://Scenes/wall.tscn" id="33_vib74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ughle"]
 size = Vector2(14, 13)
@@ -308,7 +309,10 @@ position = Vector2(48, 144)
 sprite_frames = SubResource("SpriteFrames_vib74")
 
 [node name="Player" parent="." instance=ExtResource("5_uhnj4")]
-position = Vector2(16, 88)
+position = Vector2(25, 88)
+
+[node name="Wall" parent="." instance=ExtResource("33_vib74")]
+position = Vector2(12, 104)
 
 [connection signal="body_entered" from="BatterySpot/BatteryArea" to="." method="_on_battery_area_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

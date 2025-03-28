@@ -25,10 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://gjdvjqwbyq1o" path="res://Sprites/player_idle_u2.png" id="17_qpa8y"]
 [ext_resource type="Texture2D" uid="uid://be8cxjauf1dmk" path="res://Sprites/player_idle_u3.png" id="18_sbwqj"]
 [ext_resource type="Texture2D" uid="uid://bmhfe0xd8qv0n" path="res://Sprites/player_idle_u4.png" id="19_xwi16"]
-[ext_resource type="Texture2D" uid="uid://bn084irlvlg07" path="res://Sprites/player_enter_1.png" id="26_83xs0"]
-[ext_resource type="Texture2D" uid="uid://qqhcq7p3yg5x" path="res://Sprites/player_enter_2.png" id="27_ypfnu"]
-[ext_resource type="Texture2D" uid="uid://bwugd2nry46nj" path="res://Sprites/player_enter_3.png" id="28_xuaoq"]
-[ext_resource type="Texture2D" uid="uid://bo2yj37opotw1" path="res://Sprites/player_enter_4.png" id="29_wohnl"]
+[ext_resource type="Texture2D" uid="uid://b7baglc4hb6wg" path="res://Sprites/player_enter_1.png" id="26_83xs0"]
+[ext_resource type="Texture2D" uid="uid://cbpdi6ry4f3u2" path="res://Sprites/player_enter_2.png" id="27_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://bq56rh2qil4ar" path="res://Sprites/player_enter_3.png" id="28_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://12c8g5ojnnf4" path="res://Sprites/player_enter_4.png" id="29_wohnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(16, 16)

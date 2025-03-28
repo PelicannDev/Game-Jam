@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://sbk2gb1ayn30"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://clwk3632n2f5f"]
+>>>>>>> ac67ddad6899750ea6b8efb38b5548a14968ed1f
 
-[ext_resource type="Script" uid="uid://b8qsiqb5vlint" path="res://Scripts/level_1.gd" id="1_7p6j4"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://bdl0qba1sjqqp" path="res://Scenes/tilemap.tscn" id="1_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://ovil38ch4qq7" path="res://Scenes/battery.tscn" id="3_6444e"]
@@ -8,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cskpxso16j26i" path="res://Sprites/four_light_a2.png" id="4_af3po"]
 [ext_resource type="Texture2D" uid="uid://c1t1adplqgkgq" path="res://Sprites/battery_spot.png" id="5_6444e"]
 [ext_resource type="Texture2D" uid="uid://cg8ibul5lfrpy" path="res://Sprites/lock_v.png" id="6_evi0p"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://c65yo088uu470" path="res://Sprites/fan_1.png" id="7_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://c4s45bgv825y2" path="res://Sprites/fan_2.png" id="8_xrdnt"]
 
@@ -24,6 +29,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+=======
+[ext_resource type="PackedScene" uid="uid://kl2uth1jxrj1" path="res://Scenes/wall.tscn" id="7_lsmp6"]
+>>>>>>> ac67ddad6899750ea6b8efb38b5548a14968ed1f
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
 size = Vector2(14, 13)
@@ -86,7 +94,7 @@ position = Vector2(112, 80)
 position = Vector2(112, 160)
 
 [node name="Player" parent="." instance=ExtResource("2_7p6j4")]
-position = Vector2(16, 192)
+position = Vector2(27, 185)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -113,6 +121,7 @@ texture = ExtResource("6_evi0p")
 position = Vector2(312, 168)
 texture = ExtResource("6_evi0p")
 
+<<<<<<< HEAD
 [node name="Fan" type="AnimatedSprite2D" parent="."]
 position = Vector2(288, 160)
 sprite_frames = SubResource("SpriteFrames_wrinw")
@@ -120,6 +129,10 @@ sprite_frames = SubResource("SpriteFrames_wrinw")
 [node name="Fan2" type="AnimatedSprite2D" parent="."]
 position = Vector2(288, 192)
 sprite_frames = SubResource("SpriteFrames_wrinw")
+=======
+[node name="Wall" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(12, 200)
+>>>>>>> ac67ddad6899750ea6b8efb38b5548a14968ed1f
 
 [connection signal="body_entered" from="BatterySpot/BatteryArea" to="." method="_on_battery_area_body_entered"]
 [connection signal="body_entered" from="BatterySpot2/BatteryArea" to="." method="_on_battery_area_body_entered"]
