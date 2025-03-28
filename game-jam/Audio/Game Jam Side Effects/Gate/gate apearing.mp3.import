@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://krnenne40ds2"
+path="res://.godot/imported/gate apearing.mp3-fa4df1997b45ae2c1cb0fe6cdeb57746.mp3str"
+
+[deps]
+
+source_file="res://Audio/Game Jam Side Effects/Gate/gate apearing.mp3"
+dest_files=["res://.godot/imported/gate apearing.mp3-fa4df1997b45ae2c1cb0fe6cdeb57746.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
