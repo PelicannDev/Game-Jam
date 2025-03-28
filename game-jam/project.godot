@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 SceneTransition="*res://Scenes/transition.tscn"
+Song="*res://Scenes/node_2d.tscn"
 
 [display]
 

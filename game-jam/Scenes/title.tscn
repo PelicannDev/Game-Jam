@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc2nqvshta5lr"]
+[gd_scene load_steps=34 format=3 uid="uid://cc2nqvshta5lr"]
 
 [ext_resource type="Script" uid="uid://dbyk8acyy281x" path="res://Scripts/title.gd" id="1_w31pl"]
 [ext_resource type="Texture2D" uid="uid://5jeavoml5nn5" path="res://Sprites/title_background.png" id="2_ekrfg"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://d18of34ggky6b" path="res://Sprites/wasd.png" id="27_x4jox"]
 [ext_resource type="Texture2D" uid="uid://gp42vghbnakt" path="res://Sprites/title_arrow.png" id="28_snpp8"]
 [ext_resource type="Script" uid="uid://dfsl0q832kt4v" path="res://Scripts/title_arrow.gd" id="29_y2o84"]
+[ext_resource type="AudioStream" uid="uid://dl6as207xfmq3" path="res://Audio/Game Jam Side Effects/Intro/Intro Wire.mp3" id="30_484xv"]
+[ext_resource type="AudioStream" uid="uid://cv772ky6fvjdp" path="res://Audio/title screen.mp3" id="31_ko6av"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yglx8"]
 animations = [{
@@ -142,6 +144,13 @@ bounce_height = 0.0
 
 [node name="Player" parent="." instance=ExtResource("25_mg2ew")]
 position = Vector2(28, 213)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_484xv")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_ko6av")
+parameters/looping = true
 
 [connection signal="animation_finished" from="Plug" to="." method="_on_plug_animation_finished"]
 [connection signal="body_entered" from="Plug/Area2D" to="." method="_on_area_2d_body_entered"]

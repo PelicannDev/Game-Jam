@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxqjvsck5a6f"]
+
+[ext_resource type="AudioStream" uid="uid://cxbxhxajqrrjw" path="res://Audio/Sparky Level Song.wav" id="1_v1qfn"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_v1qfn")
+volume_db = -4.685
