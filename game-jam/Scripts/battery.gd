@@ -45,13 +45,27 @@ func determine_direction():
 		target_position = position + Vector2(-grid_size, 0)  #right
 
 	else:
-
 		is_moving = false  #prevent movement if no direction is detected
 
 	#snap to grid
 	target_position = target_position.snapped(Vector2(grid_size, grid_size))
 
 func _process(delta):
+	if $Sprite/UpArea2D.get_overlapping_bodies().has(player): 
+		$eKey2.visible = true
+	elif $Sprite/DownArea2D.get_overlapping_bodies().has(player): 
+		$eKey.visible = true
+	elif $Sprite/LeftArea2D.get_overlapping_bodies().has(player):
+		$eKey3.visible = true
+	elif $Sprite/RightArea2D.get_overlapping_bodies().has(player):
+		$eKey4.visible = true
+
+	else:
+		$eKey.visible = false
+		$eKey2.visible = false
+		$eKey3.visible = false
+		$eKey4.visible = false
+	
 	if is_moving:
 		position = position.lerp(target_position, move_speed * delta)  #lerp
 		print("Battery position during lerp:", position)
