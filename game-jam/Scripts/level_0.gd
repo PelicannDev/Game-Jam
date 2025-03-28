@@ -11,6 +11,8 @@ func _on_battery_area_body_entered(body):
 	if body.is_in_group("batteries"):
 		body.locked = true
 		$Light.play()
+		$Light2.play()
+		$Light3.play()
 		$Lock.queue_free()
 		$AudioStreamPlayer.play()
 		$AudioStreamPlayer2.stop()

@@ -9,6 +9,9 @@ func _on_battery_area_body_entered(body):
 		
 		if unlock == 2:
 			$Lock.queue_free()
+			$Fan.play()
+			$Fan2.play()
+			$Lights.play()
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
