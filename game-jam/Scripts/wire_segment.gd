@@ -31,6 +31,7 @@ func _input(event):
 	
 	if event.is_action_pressed("interact"):
 		print("Q pressed on wire: ", name)
+		
 		$QKey.queue_free()
 		start_teleport()
 
