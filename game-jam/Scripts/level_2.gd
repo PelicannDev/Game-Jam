@@ -14,4 +14,4 @@ func _on_battery_area_body_entered(body):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		body.visible = false
-		await SceneTransition.transition_to("res://Scenes/level3.tscn")
+		await SceneTransition.transition_to("res://Scenes/level_3.tscn")
