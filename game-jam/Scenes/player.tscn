@@ -1,14 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg7cshvbsa2ds"]
+[gd_scene load_steps=28 format=3 uid="uid://dg7cshvbsa2ds"]
 
 [ext_resource type="Script" uid="uid://dxxew0qlpwtnh" path="res://Scripts/player.gd" id="1_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://bh0d57nxtsfho" path="res://Sprites/player_d_1.png" id="2_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://cix0ouj8vdkjn" path="res://Sprites/player_d_2.png" id="3_gymyn"]
+[ext_resource type="Texture2D" uid="uid://cj2gckeopjqfb" path="res://Sprites/player_idle_d1.png" id="4_p1odr"]
 [ext_resource type="Texture2D" uid="uid://dc3o0friip7r8" path="res://Sprites/player_l_1.png" id="4_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://b0kb28aqlgl1l" path="res://Sprites/player_idle_d2.png" id="5_0gysh"]
 [ext_resource type="Texture2D" uid="uid://cuo1et8tshvjx" path="res://Sprites/player_l_2.png" id="5_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://f5bma5tlqxoa" path="res://Sprites/player_r_1.png" id="6_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://sr7nltd5qaaw" path="res://Sprites/player_idle_d3.png" id="6_vfarp"]
 [ext_resource type="Texture2D" uid="uid://dnhvmd66caiu2" path="res://Sprites/player_r_2.png" id="7_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://dggp3x0g1vll1" path="res://Sprites/player_idle_d4.png" id="7_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://cexk2i08unc82" path="res://Sprites/player_idle_l1.png" id="8_83xs0"]
 [ext_resource type="Texture2D" uid="uid://dhwucevbgqlpx" path="res://Sprites/player_u_1.png" id="8_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://bdwiywpjw2v6l" path="res://Sprites/player_u_2.png" id="9_qqcod"]
+[ext_resource type="Texture2D" uid="uid://dw0ytpvx225yc" path="res://Sprites/player_idle_l2.png" id="9_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://6t4vpaoj4v1s" path="res://Sprites/player_idle_l3.png" id="10_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://bfcpjd7jnn3kd" path="res://Sprites/player_idle_l4.png" id="11_wohnl"]
+[ext_resource type="Texture2D" uid="uid://djrdvge413lxg" path="res://Sprites/player_idle_r1.png" id="12_36dho"]
+[ext_resource type="Texture2D" uid="uid://cdvmg20a7i41i" path="res://Sprites/player_idle_r2.png" id="13_yh6i2"]
+[ext_resource type="Texture2D" uid="uid://cwk2bxvpjlvng" path="res://Sprites/player_idle_r3.png" id="14_nv4vc"]
+[ext_resource type="Texture2D" uid="uid://cibd2k6oq5eaq" path="res://Sprites/player_idle_r4.png" id="15_8gxox"]
+[ext_resource type="Texture2D" uid="uid://crbcsyqfie00s" path="res://Sprites/player_idle_u1.png" id="16_11gg7"]
+[ext_resource type="Texture2D" uid="uid://gjdvjqwbyq1o" path="res://Sprites/player_idle_u2.png" id="17_qpa8y"]
+[ext_resource type="Texture2D" uid="uid://be8cxjauf1dmk" path="res://Sprites/player_idle_u3.png" id="18_sbwqj"]
+[ext_resource type="Texture2D" uid="uid://bmhfe0xd8qv0n" path="res://Sprites/player_idle_u4.png" id="19_xwi16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(16, 16)
@@ -24,6 +40,74 @@ animations = [{
 }],
 "loop": true,
 "name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p1odr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0gysh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vfarp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y6uwr")
+}],
+"loop": true,
+"name": &"IdleDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_83xs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ypfnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xuaoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wohnl")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_36dho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yh6i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nv4vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8gxox")
+}],
+"loop": true,
+"name": &"IdleRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_11gg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qpa8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sbwqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xwi16")
+}],
+"loop": true,
+"name": &"IdleUp",
 "speed": 5.0
 }, {
 "frames": [{
@@ -68,4 +152,5 @@ shape = SubResource("RectangleShape2D_8ryqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y32iv")
-animation = &"Down"
+animation = &"IdleUp"
+frame_progress = 0.245854

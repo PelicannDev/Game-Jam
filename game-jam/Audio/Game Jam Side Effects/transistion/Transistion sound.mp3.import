@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h1p7h5lt41if"
+path="res://.godot/imported/Transistion sound.mp3-f0405fd2aaf9cea9a179a99d999ac08e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Game Jam Side Effects/transistion/Transistion sound.mp3"
+dest_files=["res://.godot/imported/Transistion sound.mp3-f0405fd2aaf9cea9a179a99d999ac08e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

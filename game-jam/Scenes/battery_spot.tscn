@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cud0spwil8r6l"]
+
+[ext_resource type="Texture2D" uid="uid://c1t1adplqgkgq" path="res://Sprites/battery_spot.png" id="1_wnb8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ughle"]
+size = Vector2(14, 13)
+
+[node name="BatterySpot" type="Sprite2D"]
+texture = ExtResource("1_wnb8d")
+
+[node name="BatteryArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatteryArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ughle")

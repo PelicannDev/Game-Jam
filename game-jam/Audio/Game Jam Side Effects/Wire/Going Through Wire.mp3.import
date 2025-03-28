@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u8hf0iaecfb8"
+path="res://.godot/imported/Going Through Wire.mp3-9f53e7673e5cb38d49b6e0551628eeba.mp3str"
+
+[deps]
+
+source_file="res://Audio/Game Jam Side Effects/Wire/Going Through Wire.mp3"
+dest_files=["res://.godot/imported/Going Through Wire.mp3-9f53e7673e5cb38d49b6e0551628eeba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

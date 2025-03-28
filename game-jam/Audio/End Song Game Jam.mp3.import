@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnws3wni4edkd"
+path="res://.godot/imported/End Song Game Jam.mp3-bd915554bdfef4df8419f99efea8daed.mp3str"
+
+[deps]
+
+source_file="res://Audio/End Song Game Jam.mp3"
+dest_files=["res://.godot/imported/End Song Game Jam.mp3-bd915554bdfef4df8419f99efea8daed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

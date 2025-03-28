@@ -1,16 +1,139 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc2nqvshta5lr"]
+[gd_scene load_steps=30 format=3 uid="uid://cc2nqvshta5lr"]
 
 [ext_resource type="Script" uid="uid://dbyk8acyy281x" path="res://Scripts/title.gd" id="1_w31pl"]
 [ext_resource type="Texture2D" uid="uid://5jeavoml5nn5" path="res://Sprites/title_background.png" id="2_ekrfg"]
 [ext_resource type="Texture2D" uid="uid://8g1t8pxxu4j3" path="res://Sprites/title_logo.png" id="3_fp2oq"]
+[ext_resource type="Script" uid="uid://utabfxtqq5ig" path="res://Scripts/title_logo.gd" id="4_q2qps"]
+[ext_resource type="Texture2D" uid="uid://c1tnqes7yxu4h" path="res://Sprites/plug_0.png" id="5_ugnon"]
+[ext_resource type="Texture2D" uid="uid://rudscntij0fj" path="res://Sprites/plug_1.png" id="6_mg2ew"]
+[ext_resource type="Texture2D" uid="uid://cfccs3cjgpymj" path="res://Sprites/plug_2.png" id="7_d16x5"]
+[ext_resource type="Texture2D" uid="uid://bskufdcqdpxt6" path="res://Sprites/plug_3.png" id="8_x4jox"]
+[ext_resource type="Texture2D" uid="uid://dqqdf4ssfsn0p" path="res://Sprites/plug_4.png" id="9_snpp8"]
+[ext_resource type="Texture2D" uid="uid://302jnk0bd51j" path="res://Sprites/plug_5.png" id="10_y2o84"]
+[ext_resource type="Texture2D" uid="uid://cs882wi3qj4w3" path="res://Sprites/plug_6.png" id="11_484xv"]
+[ext_resource type="Texture2D" uid="uid://cd7gplqqk5188" path="res://Sprites/plug_7.png" id="12_ko6av"]
+[ext_resource type="Texture2D" uid="uid://c7s1gk8ry6ohp" path="res://Sprites/plug_8.png" id="13_8xvvu"]
+[ext_resource type="Texture2D" uid="uid://d0qhlylyh1nos" path="res://Sprites/plug_9.png" id="14_5mnvh"]
+[ext_resource type="Texture2D" uid="uid://f5aah6f1lbn6" path="res://Sprites/plug_10.png" id="15_4iywc"]
+[ext_resource type="Texture2D" uid="uid://c1akko4eje1ry" path="res://Sprites/plug_11.png" id="16_gc12f"]
+[ext_resource type="Texture2D" uid="uid://bh22s3m5kwvtf" path="res://Sprites/plug_12.png" id="17_mi30f"]
+[ext_resource type="Texture2D" uid="uid://dh03vk6y1nuy" path="res://Sprites/plug_13.png" id="18_cmmc2"]
+[ext_resource type="Texture2D" uid="uid://bc07b2640uxx6" path="res://Sprites/plug_14.png" id="19_50aho"]
+[ext_resource type="Texture2D" uid="uid://duix6gtwumb7p" path="res://Sprites/plug_15.png" id="20_6h30j"]
+[ext_resource type="Texture2D" uid="uid://1vyo1ms180xu" path="res://Sprites/plug_16.png" id="21_kh8uo"]
+[ext_resource type="Texture2D" uid="uid://bgjjbpip1h180" path="res://Sprites/plug_17.png" id="22_dojbg"]
+[ext_resource type="Texture2D" uid="uid://dudoxqsbevl8o" path="res://Sprites/plug_18.png" id="23_5auaw"]
+[ext_resource type="Texture2D" uid="uid://bcmlk2js3tjc6" path="res://Sprites/plug_19.png" id="24_i2afh"]
+[ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="25_mg2ew"]
+[ext_resource type="PackedScene" uid="uid://bdl0qba1sjqqp" path="res://Scenes/tilemap.tscn" id="26_d16x5"]
+[ext_resource type="Texture2D" uid="uid://d18of34ggky6b" path="res://Sprites/wasd.png" id="27_x4jox"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yglx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ugnon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mg2ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d16x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x4jox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_snpp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y2o84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_484xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ko6av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8xvvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5mnvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4iywc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gc12f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mi30f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cmmc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_50aho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6h30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kh8uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dojbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5auaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i2afh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 17.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d16x5"]
+size = Vector2(22, 22)
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_w31pl")
+
+[node name="TileMap" parent="." instance=ExtResource("26_d16x5")]
+layer_0/tile_data = PackedInt32Array(917504, 131072, 4, 851968, 131072, 4, 786432, 131072, 4, 720896, 131072, 4, 655360, 131072, 4, 589824, 131072, 4, 524288, 131072, 4, 458752, 131072, 4, 393216, 131072, 4, 327680, 131072, 4, 262144, 131072, 4, 196608, 131072, 4, 131072, 131072, 4, 65536, 131072, 4, 0, 131072, 4, 1, 131072, 4, 2, 131072, 4, 3, 131072, 4, 4, 131072, 4, 5, 131072, 4, 6, 131072, 4, 7, 131072, 4, 8, 131072, 4, 9, 131072, 4, 10, 131072, 4, 11, 131072, 4, 12, 131072, 4, 13, 131072, 4, 14, 131072, 4, 15, 131072, 4, 16, 131072, 4, 17, 131072, 4, 18, 131072, 4, 19, 131072, 4, 65555, 131072, 4, 131091, 131072, 4, 196627, 131072, 4, 262163, 131072, 4, 327699, 131072, 4, 393235, 131072, 4, 458771, 131072, 4, 524307, 131072, 4, 589843, 131072, 4, 655379, 131072, 4, 720915, 131072, 4, 786451, 131072, 4, 851987, 131072, 4, 917523, 131072, 4, 917522, 131072, 4, 917521, 131072, 4, 917520, 131072, 4, 917519, 131072, 4, 917518, 131072, 4, 917517, 131072, 4, 917516, 131072, 4, 917515, 131072, 4, 917514, 131072, 4, 917513, 131072, 4, 917512, 131072, 4, 917511, 131072, 4, 917510, 131072, 4, 917509, 131072, 4, 917508, 131072, 4, 917507, 131072, 4, 917506, 131072, 4, 917505, 131072, 4, 851977, 131072, 4, 786441, 131072, 4, 720905, 131072, 4, 655369, 131072, 4, 589833, 131072, 4, 524297, 131072, 4, 458761, 131072, 4, 393225, 131072, 4, 327689, 131072, 4, 262153, 131072, 4, 196617, 131072, 4, 131081, 131072, 4, 65545, 131072, 4, 393224, 131072, 4, 393223, 131072, 4, 393222, 131072, 4, 393221, 131072, 4, 393220, 131072, 4, 393219, 131072, 4, 393218, 131072, 4, 393217, 131072, 4, 262147, 131072, 4, 196611, 131072, 4, 131075, 131072, 4, 65539, 131072, 4, 65538, 131072, 4, 65537, 131072, 4, 131073, 131072, 4, 196609, 131072, 4, 262145, 131072, 4, 327681, 131072, 4, 327682, 131072, 4, 262146, 131072, 4, 196610, 131072, 4, 131074, 131072, 4, 327683, 131072, 4, 327684, 131072, 4, 262148, 131072, 4, 196612, 131072, 4, 131076, 131072, 4, 65540, 131072, 4, 65541, 131072, 4, 131077, 131072, 4, 196613, 131072, 4, 262149, 131072, 4, 327685, 131072, 4, 327686, 131072, 4, 262150, 131072, 4, 196614, 131072, 4, 131078, 131072, 4, 65542, 131072, 4, 65543, 131072, 4, 131079, 131072, 4, 196615, 131072, 4, 262151, 131072, 4, 327687, 131072, 4, 327688, 131072, 4, 262152, 131072, 4, 196616, 131072, 4, 131080, 131072, 4, 65544, 131072, 4, 458768, 131072, 4, 393232, 131072, 4, 327696, 131072, 4, 262160, 131072, 4, 196624, 131072, 4, 131088, 131072, 4, 65552, 131072, 4, 65551, 131072, 4, 65550, 131072, 4, 65549, 131072, 4, 65548, 131072, 4, 65547, 131072, 4, 65546, 131072, 4, 131082, 131072, 4, 196618, 131072, 4, 262154, 131072, 4, 327690, 131072, 4, 393226, 131072, 4, 458762, 131072, 4, 524298, 131072, 4, 589834, 131072, 4, 655370, 131072, 4, 720906, 131072, 4, 786442, 131072, 4, 851978, 131072, 4, 851979, 131072, 4, 786443, 131072, 4, 720907, 131072, 4, 655371, 131072, 4, 589835, 131072, 4, 524299, 131072, 4, 458763, 131072, 4, 393227, 131072, 4, 327691, 131072, 4, 262155, 131072, 4, 196619, 131072, 4, 131083, 131072, 4, 131084, 131072, 4, 196620, 131072, 4, 262156, 131072, 4, 327692, 131072, 4, 393228, 131072, 4, 458764, 131072, 4, 524300, 131072, 4, 589836, 131072, 4, 655372, 131072, 4, 720908, 131072, 4, 786444, 131072, 4, 851980, 131072, 4, 851981, 131072, 4, 786445, 131072, 4, 720909, 131072, 4, 655373, 131072, 4, 589837, 131072, 4, 524301, 131072, 4, 458765, 131072, 4, 393229, 131072, 4, 327693, 131072, 4, 262157, 131072, 4, 196621, 131072, 4, 131085, 131072, 4, 131086, 131072, 4, 196622, 131072, 4, 262158, 131072, 4, 327694, 131072, 4, 393230, 131072, 4, 458766, 131072, 4, 524302, 131072, 4, 589838, 131072, 4, 655374, 131072, 4, 720910, 131072, 4, 786446, 131072, 4, 851982, 131072, 4, 851983, 131072, 4, 786447, 131072, 4, 720911, 131072, 4, 655375, 131072, 4, 589839, 131072, 4, 524303, 131072, 4, 458767, 131072, 4, 393231, 131072, 4, 327695, 131072, 4, 262159, 131072, 4, 196623, 131072, 4, 131087, 131072, 4, 524304, 131072, 4, 589840, 131072, 4, 655376, 131072, 4, 720912, 131072, 4, 786448, 131072, 4, 851984, 131072, 4, 851985, 131072, 4, 786449, 131072, 4, 720913, 131072, 4, 655377, 131072, 4, 589841, 131072, 4, 524305, 131072, 4, 458769, 131072, 4, 393233, 131072, 4, 327697, 131072, 4, 262161, 131072, 4, 196625, 131072, 4, 131089, 131072, 4, 65553, 131072, 4, 65554, 131072, 4, 131090, 131072, 4, 196626, 131072, 4, 262162, 131072, 4, 327698, 131072, 4, 393234, 131072, 4, 458770, 131072, 4, 524306, 131072, 4, 589842, 131072, 4, 655378, 131072, 4, 720914, 131072, 4, 786450, 131072, 4, 851986, 131072, 4)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 120)
 texture = ExtResource("2_ekrfg")
 
 [node name="TitleLogo" type="Sprite2D" parent="."]
-position = Vector2(132, 52)
+position = Vector2(145, 64)
 texture = ExtResource("3_fp2oq")
+script = ExtResource("4_q2qps")
+bounce_height = 15.0
+scale_pulse_amount = 0.05
+
+[node name="Plug" type="AnimatedSprite2D" parent="."]
+position = Vector2(113, 164)
+sprite_frames = SubResource("SpriteFrames_yglx8")
+frame = 19
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="Plug"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug/Area2D"]
+position = Vector2(-21, -22)
+shape = SubResource("RectangleShape2D_d16x5")
+
+[node name="Wasd" type="Sprite2D" parent="."]
+position = Vector2(28, 182)
+texture = ExtResource("27_x4jox")
+
+[node name="Player" parent="." instance=ExtResource("25_mg2ew")]
+position = Vector2(28, 213)
+
+[connection signal="animation_finished" from="Plug" to="." method="_on_plug_animation_finished"]
+[connection signal="body_entered" from="Plug/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl6as207xfmq3"
+path="res://.godot/imported/Intro Wire.mp3-860971b26effc43d1522d5357bbe41b5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Game Jam Side Effects/Intro/Intro Wire.mp3"
+dest_files=["res://.godot/imported/Intro Wire.mp3-860971b26effc43d1522d5357bbe41b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
