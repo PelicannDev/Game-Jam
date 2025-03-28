@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://5theixn0n2f4"]
 
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="1_wi344"]
@@ -6,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ovil38ch4qq7" path="res://Scenes/battery.tscn" id="3_dvrgg"]
 [ext_resource type="PackedScene" uid="uid://cud0spwil8r6l" path="res://Scenes/battery_spot.tscn" id="4_wk15n"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=34 format=3 uid="uid://cnquyde6eg0jv"]
 
 [ext_resource type="PackedScene" uid="uid://dg7cshvbsa2ds" path="res://Scenes/player.tscn" id="1_5eaas"]
@@ -36,6 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://elftxrhnks6v" path="res://Sprites/q_key.png" id="25_a6441"]
 [ext_resource type="PackedScene" uid="uid://kl2uth1jxrj1" path="res://Scenes/wall.tscn" id="28_glsh0"]
 [ext_resource type="Texture2D" uid="uid://bbws30igubkhy" path="res://Sprites/lock_h.png" id="28_sw1t4"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="level 4" type="Node2D"]
@@ -53,6 +59,9 @@ position = Vector2(169, -40)
 [node name="BatterySpot" parent="." instance=ExtResource("4_wk15n")]
 position = Vector2(117, -26)
 =======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vef0"]
+size = Vector2(48, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vef0"]
 size = Vector2(48, 16)
 
